@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f6f5" />
+    <meta name="description" content="Offline simulator for rehearsing broker subscription flows" />
+    <title>Broker Access Lab</title>
+
+    <!-- Fonts: System-first with optional web fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <!-- ==================== TOP BAR ==================== -->
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Broker Access Lab home">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span class="brand-text">Broker Access <span class="brand-muted">Lab</span></span>
+        </a>
+        <div class="topbar-note">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>Offline simulator</span>
+        </div>
+      </header>
+
+      <!-- ==================== MAIN ==================== -->
+      <main>
+        <!-- Page heading -->
+        <section class="page-heading" aria-labelledby="page-title">
+          <div class="page-heading-text">
+            <p class="eyebrow">PRODUCT PLAYGROUND</p>
+            <h1 id="page-title">Rehearse the subscription journey.</h1>
+            <p class="page-subtitle">
+              Shape a broker scenario, then explore the app exactly as they would.
+            </p>
+          </div>
+          <div class="clock-chip" role="status" aria-live="polite">
+            <span class="clock-icon" aria-hidden="true">◷</span>
+            <span class="clock-text">
+              <span class="clock-label">Simulated time</span>
+              <strong id="clock-label">—</strong>
+            </span>
+          </div>
+        </section>
+
+        <!-- Two-pane workspace -->
+        <div class="workspace">
+          <!-- LEFT: Scenario setup -->
+          <aside class="scenario-panel" aria-labelledby="scenario-title">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">CONTROL ROOM</p>
+                <h2 id="scenario-title">Scenario setup</h2>
+              </div>
+              <span class="panel-index" aria-hidden="true">01</span>
+            </div>
+            <div id="scenario-root"></div>
+          </aside>
+
+          <!-- RIGHT: App emulator -->
+          <section class="emulator-panel" aria-label="Broker app emulator">
+            <div class="emulator-topline">
+              <span class="eyebrow">BROKER APP PREVIEW</span>
+              <span class="device-label">
+                <span class="device-dot" aria-hidden="true"></span>
+                Mobile view
+              </span>
+            </div>
+            <div id="emulator-root"></div>
+          </section>
+        </div>
+      </main>
+
+      <!-- ==================== FOOTER ==================== -->
+      <footer class="footer-note">
+        A local-only product simulator
+        <span aria-hidden="true">·</span>
+        No payments, accounts, or external services
+      </footer>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
